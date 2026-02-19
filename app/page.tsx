@@ -26,13 +26,15 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedInfluencer, setSelectedInfluencer] = useState('all');
   const [videoResearchData, setVideoResearchData] = useState<Record<string, any>>({});
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Get all videos from all influencers
   const allVideos = allInfluencers.flatMap(influencer => 
     influencer.videos.map(video => ({
       ...video,
       influencerId: influencer.id,
-      influencerName: influencer.name
+      influencerName: influencer.name,
+      influencerAvatar: influencer.avatar
     }))
   );
 
@@ -92,68 +94,200 @@ export default function Home() {
               <h1 style={{ fontSize: '1.8rem', fontWeight: 'bold', margin: 0 }}>Strato Lab</h1>
               <p style={{ color: '#c084fc', margin: '2px 0 0 0', fontSize: '0.875rem' }}>AI Influencer Knowledge Management</p>
             </div>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button
+                onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  color: 'white',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  padding: '8px 12px',
+                  borderRadius: '6px',
+                  fontSize: '0.875rem',
+                  cursor: 'pointer'
+                }}
+              >
+                {viewMode === 'grid' ? '☰ List' : '⊞ Grid'}
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px' }}>
-        {/* Influencer Selection - Mobile Optimized */}
-        <div className="compact-influencer">
-          <img
-            src={selectedInfluencer === 'all' 
-              ? 'https://via.placeholder.com/48x48/9333ea/ffffff?text=AI'
-              : allInfluencers.find(inf => inf.id === selectedInfluencer)?.avatar
-            }
-            alt={selectedInfluencer === 'all' ? 'All Influencers' : allInfluencers.find(inf => inf.id === selectedInfluencer)?.name}
-            className="compact-influencer-avatar"
-          />
-          <div className="compact-influencer-info">
-            <h2 className="compact-influencer-name">
-              {selectedInfluencer === 'all' 
-                ? 'All Influencers' 
-                : allInfluencers.find(inf => inf.id === selectedInfluencer)?.name
-              }
-            </h2>
-            <p className="compact-influencer-description">
-              {selectedInfluencer === 'all' 
-                ? 'Discover content from top AI influencers and thought leaders'
-                : allInfluencers.find(inf => inf.id === selectedInfluencer)?.description
-              }
-            </p>
-            {selectedInfluencer !== 'all' && (
-              <div className="compact-influencer-tags">
-                {allInfluencers.find(inf => inf.id === selectedInfluencer)?.tags.slice(0, 3).map(tag => (
-                  <span key={tag} className="compact-influencer-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-          <select
-            value={selectedInfluencer}
-            onChange={(e) => setSelectedInfluencer(e.target.value)}
+        
+        {/* Influencer Selection Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '12px',
+          marginBottom: '20px'
+        }}>
+          {/* All Influencers Card */}
+          <div
+            onClick={() => setSelectedInfluencer('all')}
             style={{
-              background: 'rgba(255, 255, 255, 0.1)',
-              color: 'white',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '6px',
-              padding: '6px',
-              fontSize: '0.875rem',
-              cursor: 'pointer'
+              background: selectedInfluencer === 'all' 
+                ? 'linear-gradient(135deg, #9333ea, #7c3aed)' 
+                : 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: '12px',
+              padding: '16px',
+              border: selectedInfluencer === 'all' 
+                ? '2px solid #c084fc' 
+                : '1px solid rgba(255, 255, 255, 0.2)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}
+            onMouseEnter={(e) => {
+              if (selectedInfluencer !== 'all') {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (selectedInfluencer !== 'all') {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }
             }}
           >
-            <option value="all" style={{ background: '#1a1a2e' }}>All</option>
-            {allInfluencers.map(influencer => (
-              <option key={influencer.id} value={influencer.id} style={{ background: '#1a1a2e' }}>
-                {influencer.name}
-              </option>
-            ))}
-          </select>
+            <div style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #9333ea, #7c3aed)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              flexShrink: 0
+            }}>
+              AI
+            </div>
+            <div style={{ flex: 1 }}>
+              <h3 style={{
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                margin: '0 0 4px 0',
+                color: 'white'
+              }}>
+                All Influencers
+              </h3>
+              <p style={{
+                color: selectedInfluencer === 'all' ? '#e9d5ff' : '#c084fc',
+                fontSize: '0.875rem',
+                margin: 0,
+                lineHeight: '1.4'
+              }}>
+                {allInfluencers.reduce((total, inf) => total + inf.videos.length, 0)} videos
+              </p>
+            </div>
+          </div>
+
+          {/* Individual Influencer Cards */}
+          {allInfluencers.map(influencer => (
+            <div
+              key={influencer.id}
+              onClick={() => setSelectedInfluencer(influencer.id)}
+              style={{
+                background: selectedInfluencer === influencer.id 
+                  ? 'linear-gradient(135deg, #9333ea, #7c3aed)' 
+                  : 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                padding: '16px',
+                border: selectedInfluencer === influencer.id 
+                  ? '2px solid #c084fc' 
+                  : '1px solid rgba(255, 255, 255, 0.2)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px'
+              }}
+              onMouseEnter={(e) => {
+                if (selectedInfluencer !== influencer.id) {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedInfluencer !== influencer.id) {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                }
+              }}
+            >
+              <img
+                src={influencer.avatar}
+                alt={influencer.name}
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  border: '2px solid #c084fc',
+                  flexShrink: 0
+                }}
+              />
+              <div style={{ flex: 1 }}>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: 'bold',
+                  margin: '0 0 4px 0',
+                  color: 'white',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {influencer.name}
+                </h3>
+                <p style={{
+                  color: selectedInfluencer === influencer.id ? '#e9d5ff' : '#c084fc',
+                  fontSize: '0.875rem',
+                  margin: 0,
+                  lineHeight: '1.4',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
+                }}>
+                  {influencer.description}
+                </p>
+                <div style={{
+                  display: 'flex',
+                  gap: '4px',
+                  flexWrap: 'wrap',
+                  marginTop: '6px'
+                }}>
+                  {influencer.tags.slice(0, 2).map(tag => (
+                    <span key={tag} style={{
+                      background: 'rgba(192, 132, 252, 0.3)',
+                      color: '#e9d5ff',
+                      padding: '2px 6px',
+                      borderRadius: '10px',
+                      fontSize: '0.7rem'
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
+                  {influencer.tags.length > 2 && (
+                    <span style={{
+                      color: '#c084fc',
+                      fontSize: '0.7rem',
+                      padding: '2px 4px'
+                    }}>
+                      +{influencer.tags.length - 2}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Search and Filter - Mobile Optimized */}
+        {/* Search and Filter */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
           <input
             type="text"
@@ -206,7 +340,7 @@ export default function Home() {
           )}
         </div>
 
-        {/* Videos Grid - Mobile First */}
+        {/* Videos Grid/List */}
         <div className="videos-grid">
           {filteredVideos.map(video => (
             <div
@@ -214,11 +348,7 @@ export default function Home() {
               className="video-card"
             >
               {/* Video Header - Compact */}
-              <div style={{
-                padding: '16px',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                background: 'rgba(0, 0, 0, 0.2)'
-              }}>
+              <div className="video-header-compact">
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -226,7 +356,7 @@ export default function Home() {
                   marginBottom: '8px'
                 }}>
                   <img
-                    src={allInfluencers.find(inf => inf.id === video.influencerId)?.avatar}
+                    src={video.influencerAvatar}
                     alt={video.influencerName}
                     style={{
                       width: '24px',
@@ -249,13 +379,7 @@ export default function Home() {
                     {formatDate(video.publishedAt)}
                   </span>
                 </div>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: 'bold',
-                  margin: 0,
-                  lineHeight: '1.4',
-                  color: 'white'
-                }}>
+                <h3 className="video-title-compact">
                   {video.title}
                 </h3>
                 {video.category && (
@@ -274,7 +398,7 @@ export default function Home() {
               </div>
 
               {/* Video Content */}
-              <div style={{ padding: '16px' }}>
+              <div className="video-content-compact">
                 {video.summary && (
                   <p style={{
                     color: '#e9d5ff',
