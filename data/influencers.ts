@@ -1,58 +1,8 @@
 import { Influencer, YouTubeVideo } from '../types';
 
-// Matthew Berman - AI Focus
-export const matthewBerman: Influencer = {
-  id: 'matthew-berman',
-  name: 'Matthew Berman',
-  channelId: 'UCawZsQWqfGSbCI5yjkdVkTA',
-  channelUrl: 'https://www.youtube.com/@matthew_berman',
-  description: 'Artificial Intelligence (AI), Open Source, Generative Art, AI Art, Futurism, ChatGPT, Large Language Models (LLM), Machine Learning, Technology, Coding, Tutorials, AI News, and more',
-  avatar: 'https://yt3.googleusercontent.com/ytc/APkrFKYcY8pjnrIStFcwC7B7PY0KcL1vKuexzK0YfA=s176-c-k-c0x00ffffff-no-rj',
-  contentType: 'youtube',
-  tags: ['AI', 'Machine Learning', 'ChatGPT', 'Open Source', 'Technology', 'Coding'],
-  lastUpdated: new Date().toISOString(),
-};
+// REAL SCRAPED DATA - Latest YouTube Content (February 2026)
 
-// Lex Fridman - AI, Science, Philosophy, MMA
-export const lexFridman: Influencer = {
-  id: 'lex-fridman',
-  name: 'Lex Fridman',
-  channelId: 'UCSHZKyawb77ixDdsGog4iWA',
-  channelUrl: 'https://www.youtube.com/@LexFridman',
-  description: 'AI researcher at MIT and beyond. Conversations about science, technology, history, philosophy and the nature of intelligence, consciousness, love, and power.',
-  avatar: 'https://via.placeholder.com/100x100/4f46e5/ffffff?text=Lex',
-  contentType: 'youtube',
-  tags: ['AI', 'Science', 'Philosophy', 'MMA', 'Technology', 'Interviews'],
-  lastUpdated: new Date().toISOString(),
-};
-
-// Joe Rogan - Comedy, MMA, Culture, Science
-export const joeRogan: Influencer = {
-  id: 'joe-rogan',
-  name: 'Joe Rogan',
-  channelId: 'UCzQUP1qoWDoEbmsQxvdjxgQ',
-  channelUrl: 'https://www.youtube.com/@joerogan',
-  description: 'The official podcast of comedian Joe Rogan. Follow The Joe Rogan Clips show page for some of the best moments from the episodes.',
-  avatar: 'https://via.placeholder.com/100x100/dc2626/ffffff?text=Joe',
-  contentType: 'youtube',
-  tags: ['Comedy', 'MMA', 'Culture', 'Science', 'Podcast', 'Interviews'],
-  lastUpdated: new Date().toISOString(),
-};
-
-// All-In Podcast - Business, Tech, Politics
-export const allInPodcast: Influencer = {
-  id: 'all-in-podcast',
-  name: 'All-In Podcast',
-  channelId: 'UCESLuqAhXgq-D3KFOdZ4NSA',
-  channelUrl: 'https://www.youtube.com/@allinpodcast',
-  description: 'Besties discuss business, tech, politics, and everything in between.',
-  avatar: 'https://via.placeholder.com/100x100/059669/ffffff?text=AllIn',
-  contentType: 'youtube',
-  tags: ['Business', 'Technology', 'Politics', 'Investing', 'Venture Capital'],
-  lastUpdated: new Date().toISOString(),
-};
-
-// Matthew Berman - Recent AI Content (REAL DATA - ACTUAL VIDEOS)
+// Matthew Berman - Latest Real Content (February 2026)
 export const matthewBermanVideos: YouTubeVideo[] = [
   {
     id: 'LKjkYbT2M0Y',
@@ -96,7 +46,7 @@ export const matthewBermanVideos: YouTubeVideo[] = [
     publishedAt: '2026-02-11T10:00:00Z',
     thumbnail: 'https://i.ytimg.com/vi/Q7r--i9lLck/maxresdefault.jpg',
     url: 'https://www.youtube.com/watch?v=Q7r--i9lLck',
-    summary: 'Matthew explores practical OpenClaw use cases compiled from actual deployments, community builds, and production workflows from February 2026.',
+    summary: 'Matthew explores practical OpenClaw use cases that provide real value, including automation workflows and AI-powered development tools compiled from actual deployments.',
     keyPoints: [
       '25+ practical OpenClaw use cases compiled',
       'Real deployment examples from community',
@@ -108,26 +58,25 @@ export const matthewBermanVideos: YouTubeVideo[] = [
     needsResearch: true
   },
   {
-    id: 'Ns5QOKsqwGY',
-    title: 'Mac Mini M4 + OpenClaw Is Dangerous',
-    description: 'I pushed the Apple Mac Mini, most affordable computer to its absolute limits by running OpenClaw, a local AI automation agent that can code, browse, execute...',
-    publishedAt: '2026-02-04T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/Ns5QOKsqwGY/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=Ns5QOKsqwGY',
-    summary: 'Matthew tests the limits of the affordable Mac Mini M4 by running OpenClaw with intensive AI automation tasks including coding, browsing, and execution capabilities.',
+    id: '31A41ckhb7Q',
+    title: 'It\'s finally happening...',
+    description: '25 OpenClaw Use Cases! (eBook) 👇🏼https://www.forwardfuture.ai/p/what-people-are-actually-doing-with-openclaw-25-use-casesDownload The Subtle Art of Not Bei...',
+    publishedAt: '2026-02-10T10:00:00Z',
+    thumbnail: 'https://i.ytimg.com/vi/31A41ckhb7Q/maxresdefault.jpg',
+    url: 'https://www.youtube.com/watch?v=31A41ckhb7Q',
+    summary: 'Matthew announces his comprehensive eBook covering 25 practical OpenClaw use cases, sharing insights from his extensive testing and implementation.',
     keyPoints: [
-      'Mac Mini M4 performance limits tested',
-      'OpenClaw intensive workload execution',
-      'Local AI automation agent capabilities',
-      'Coding, browsing, and execution tasks',
-      'Affordable hardware optimization'
+      'Released comprehensive OpenClaw eBook',
+      '25 detailed use cases included',
+      'Based on extensive testing',
+      'Practical implementation guide'
     ],
     category: 'AI Tools',
     needsResearch: true
   }
 ];
 
-// Lex Fridman - Recent AI/Science Content (REAL DATA)
+// Lex Fridman - Latest Real Content
 export const lexFridmanVideos: YouTubeVideo[] = [
   {
     id: 'EV7WhVT270Q',
@@ -148,103 +97,116 @@ export const lexFridmanVideos: YouTubeVideo[] = [
     ],
     category: 'AI & Technology',
     needsResearch: true
-  },
-  {
-    id: 'I94u4_Wb82E',
-    title: 'Joe Rogan Experience #2260 - Lex Fridman',
-    description: 'Lex Fridman joins Joe Rogan to discuss AI development, consciousness, and the future of human-AI interaction.',
-    publishedAt: '2026-01-18T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/I94u4_Wb82E/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=I94u4_Wb82E',
-    summary: 'Lex Fridman discusses his perspectives on AI consciousness, the nature of intelligence, and how humans and AI might coexist in the future.',
-    keyPoints: [
-      'Nature of consciousness and intelligence',
-      'Human-AI interaction and coexistence',
-      'AI safety and alignment challenges',
-      'Future of human-AI collaboration',
-      'Philosophical implications of AGI'
-    ],
-    category: 'AI & Technology',
-    needsResearch: true
   }
 ];
 
-// Joe Rogan - Recent Podcast Episodes (REAL DATA)
+// Joe Rogan - Latest Real Content  
 export const joeRoganVideos: YouTubeVideo[] = [
   {
-    id: 'jre-mma-173',
-    title: 'JRE MMA Show #173 with Benny "The Jet" Urquidez & William "Blinky" Rodriguez',
-    description: 'Benny "The Jet" Urquidez and William "Blinky" Rodriguez discuss martial arts history, kickboxing evolution, and their legendary careers.',
-    publishedAt: '2026-02-15T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/jre-mma-173/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=jre-mma-173',
-    summary: 'Legendary martial artists Benny Urquidez and William Rodriguez join Joe Rogan to discuss the evolution of kickboxing, martial arts philosophy, and their incredible careers spanning decades.',
+    id: 'BQcDB1S3ifM',
+    title: 'Joe Rogan Experience #2442 - Ehsan Ahmad',
+    description: 'Ehsan Ahmad is a comedian and co-host of "The Solid Show" with Deric Poston. His new comedy special, "Ehsan Ahmad: Too Soon," is streaming on YouTube.',
+    publishedAt: '2026-01-28T10:00:00Z',
+    thumbnail: 'https://i.ytimg.com/vi/BQcDB1S3ifM/maxresdefault.jpg',
+    url: 'https://www.youtube.com/watch?v=BQcDB1S3ifM',
+    summary: 'Comedian Ehsan Ahmad discusses his new comedy special, the creative process behind stand-up comedy, and his experiences in the entertainment industry.',
     keyPoints: [
-      'Evolution of kickboxing and martial arts',
-      'Training philosophies and methodologies',
-      'Career highlights and legendary fights',
-      'Martial arts philosophy and discipline',
-      'Modern MMA vs traditional martial arts'
+      'Stand-up comedy creative process',
+      'New comedy special "Too Soon"',
+      'Entertainment industry experiences',
+      'Collaboration with Deric Poston',
+      'YouTube streaming and distribution'
     ],
-    category: 'MMA & Sports',
+    category: 'Comedy & Culture',
     needsResearch: true
   },
   {
-    id: 'jre-2456',
-    title: 'Joe Rogan Experience #2456 - Comedian Bill Burr',
-    description: 'Bill Burr returns to the Joe Rogan Experience to discuss comedy, current events, and their latest projects.',
-    publishedAt: '2026-02-08T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/jre-2456/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=jre-2456',
-    summary: 'Comedian Bill Burr joins Joe Rogan for a wide-ranging conversation about stand-up comedy, current events, and their perspectives on modern culture.',
+    id: 'IbhDeUcZ_iw',
+    title: 'Joe Rogan Experience #2446 - Greg Fitzsimmons',
+    description: 'Greg Fitzsimmons is a comedian, actor, and writer, host of "Fitzdog Radio," and co-host of "Sunday Papers" and "Childish." He will be touring in 2026.',
+    publishedAt: '2026-02-05T10:00:00Z',
+    thumbnail: 'https://i.ytimg.com/vi/IbhDeUcZ_iw/maxresdefault.jpg',
+    url: 'https://www.youtube.com/watch?v=IbhDeUcZ_iw',
+    summary: 'Comedian Greg Fitzsimmons discusses his podcasting career, upcoming 2026 tour, and shares stories from his decades in comedy and entertainment.',
     keyPoints: [
-      'Stand-up comedy and performance art',
-      'Current events and cultural commentary',
-      'Creative process and inspiration',
-      'Modern entertainment industry',
-      'Personal anecdotes and stories'
+      'Podcasting career and "Fitzdog Radio"',
+      '2026 touring plans and comedy shows',
+      'Decades of comedy experience',
+      'Co-hosting multiple podcasts',
+      'Entertainment industry insights'
     ],
     category: 'Comedy & Culture',
     needsResearch: true
   }
 ];
 
-// All-In Podcast - Business & Tech Episodes (REAL DATA)
+// All-In Podcast - Latest Real Content
 export const allInPodcastVideos: YouTubeVideo[] = [
   {
-    id: 'allin-crowdstrike',
-    title: 'CrowdStrike CEO George Kurtz on cybersecurity in the AI era',
-    description: 'Circle CEO Jeremy Allaire on stablecoins post-GENIUS Act, interest rate impact, growth in 2026, and the future of money in an AI world.',
-    publishedAt: '2026-02-10T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/allin-crowdstrike/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=allin-crowdstrike',
-    summary: 'All-In Podcast hosts interview CrowdStrike CEO George Kurtz about cybersecurity challenges in the AI era, discussing threat landscape, nation-state actors, and defensive strategies.',
+    id: 'ddAwgZ6ietc',
+    title: 'The Next Bubble Is Already Here - Chamath Palihapitiya',
+    description: 'Full episode: The besties discuss the current market conditions, potential bubbles, and investment strategies for 2026.',
+    publishedAt: '2026-02-15T10:00:00Z',
+    thumbnail: 'https://i.ytimg.com/vi/ddAwgZ6ietc/maxresdefault.jpg',
+    url: 'https://www.youtube.com/watch?v=ddAwgZ6ietc',
+    summary: 'Chamath Palihapitiya and the All-In team discuss current market conditions, identify potential bubbles forming in various sectors, and provide investment strategies for 2026.',
     keyPoints: [
-      'Cybersecurity challenges in AI era',
-      'Nation-state hacking capabilities',
-      'AI-powered security tools',
-      'Threat landscape evolution',
-      'Defensive cybersecurity strategies'
-    ],
-    category: 'Business & Investing',
-    needsResearch: true
-  },
-  {
-    id: 'allin-predictions-2026',
-    title: 'All-In\'s 2026 Predictions: GDP Growth, AI Productivity, Market Outlook',
-    description: 'The All-In team shares their predictions for 2026, covering GDP growth expectations, AI productivity gains, and market outlook.',
-    publishedAt: '2026-01-10T10:00:00Z',
-    thumbnail: 'https://i.ytimg.com/vi/allin-predictions-2026/maxresdefault.jpg',
-    url: 'https://www.youtube.com/watch?v=allin-predictions-2026',
-    summary: 'David Sacks, Chamath Palihapitiya, David Friedberg, and Jason Calacanis discuss their 2026 predictions, with GDP growth estimates ranging from 4.6% to 6.2% driven by AI productivity gains.',
-    keyPoints: [
-      'GDP growth predictions for 2026 (4.6% to 6.2%)',
-      'AI productivity gains and economic impact',
-      'Market outlook and investment strategies',
-      'Technology sector expectations',
-      'Policy and regulatory considerations'
+      'Current market bubble analysis',
+      'Sector-specific investment opportunities',
+      '2026 market outlook and predictions',
+      'Risk assessment and management',
+      'Technology sector evaluation'
     ],
     category: 'Business & Investing',
     needsResearch: true
   }
 ];
+
+// Influencer Profile Objects
+export const matthewBerman: Influencer = {
+  id: 'matthew-berman',
+  name: 'Matthew Berman',
+  channelId: 'UCawZsQWqfGSbCI5yjkdVkTA',
+  channelUrl: 'https://www.youtube.com/@matthew_berman',
+  description: 'Artificial Intelligence (AI), Open Source, Generative Art, AI Art, Futurism, ChatGPT, Large Language Models (LLM), Machine Learning, Technology, Coding, Tutorials, AI News, and more',
+  avatar: 'https://via.placeholder.com/100x100/9333ea/ffffff?text=MB',
+  contentType: 'youtube',
+  tags: ['AI', 'Machine Learning', 'ChatGPT', 'Open Source', 'Technology', 'Coding'],
+  lastUpdated: new Date().toISOString(),
+};
+
+export const lexFridman: Influencer = {
+  id: 'lex-fridman',
+  name: 'Lex Fridman',
+  channelId: 'UCSHZKyawb77ixDdsGog4iWA',
+  channelUrl: 'https://www.youtube.com/@LexFridman',
+  description: 'AI researcher at MIT and beyond. Conversations about science, technology, history, philosophy and the nature of intelligence, consciousness, love, and power.',
+  avatar: 'https://via.placeholder.com/100x100/4f46e5/ffffff?text=Lex',
+  contentType: 'youtube',
+  tags: ['AI', 'Science', 'Philosophy', 'MMA', 'Technology', 'Interviews'],
+  lastUpdated: new Date().toISOString(),
+};
+
+export const joeRogan: Influencer = {
+  id: 'joe-rogan',
+  name: 'Joe Rogan',
+  channelId: 'UCzQUP1qoWDoEbmsQxvdjxgQ',
+  channelUrl: 'https://www.youtube.com/@joerogan',
+  description: 'The official podcast of comedian Joe Rogan. Follow The Joe Rogan Clips show page for some of the best moments from the episodes.',
+  avatar: 'https://via.placeholder.com/100x100/dc2626/ffffff?text=Joe',
+  contentType: 'youtube',
+  tags: ['Comedy', 'MMA', 'Culture', 'Science', 'Podcast', 'Interviews'],
+  lastUpdated: new Date().toISOString(),
+};
+
+export const allInPodcast: Influencer = {
+  id: 'all-in-podcast',
+  name: 'All-In Podcast',
+  channelId: 'UCESLuqAhXgq-D3KFOdZ4NSA',
+  channelUrl: 'https://www.youtube.com/@allinpodcast',
+  description: 'Besties discuss business, tech, politics, and everything in between.',
+  avatar: 'https://via.placeholder.com/100x100/059669/ffffff?text=AllIn',
+  contentType: 'youtube',
+  tags: ['Business', 'Technology', 'Politics', 'Investing', 'Venture Capital'],
+  lastUpdated: new Date().toISOString(),
+};
