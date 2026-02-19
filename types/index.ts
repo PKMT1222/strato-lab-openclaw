@@ -8,6 +8,21 @@ export interface YouTubeVideo {
   summary?: string;
   keyPoints?: string[];
   category?: string;
+  needsResearch?: boolean;
+  researchData?: ResearchData;
+}
+
+export interface ResearchData {
+  enhancedSummary?: string;
+  detailedKeyPoints?: string[];
+  relatedTopics?: string[];
+  sentimentAnalysis?: {
+    overall: string;
+    confidence: number;
+    aspects: Record<string, string>;
+  };
+  researchTimestamp?: string;
+  sources?: string[];
 }
 
 export interface Influencer {

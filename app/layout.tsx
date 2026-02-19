@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import './styles.css'
 
 export const metadata: Metadata = {
   title: 'Strato Lab - AI Influencer Knowledge Management',
-  description: 'Track and analyze content from AI influencers like Matthew Berman',
-  keywords: 'AI, Influencers, Knowledge Management, Matthew Berman, OpenClaw, Machine Learning',
+  description: 'Track and analyze content from AI influencers like Matthew Berman, Lex Fridman, Joe Rogan, and All-In Podcast',
+  keywords: 'AI, Influencers, Knowledge Management, Matthew Berman, Lex Fridman, Joe Rogan, All-In Podcast, OpenClaw, Machine Learning',
   authors: [{ name: 'Strato Lab' }],
   openGraph: {
     title: 'Strato Lab - AI Influencer Knowledge Management',
