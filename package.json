@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "daily-distribution": "node daily-esim-distribution.js",
+    "view-report": "cat data/daily-report.txt || echo 'No report available yet'",
+    "setup-campaign": "./setup-esim-campaign.sh",
+    "scrape-youtube": "node app/api/scrape-youtube/route.js"
   },
   "dependencies": {
     "framer-motion": "^12.34.0",
